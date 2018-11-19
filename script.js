@@ -10,7 +10,7 @@ function shufflize() {
 		for(i = (words.length - 1); i > 0; i--) {
 			var j = Math.floor(Math.random() * (i + 1));
 			var temp = words[i];
-			word[i] = words[j];
+			words[i] = words[j];
 			words[j] = temp;
 		}
 		document.getElementById("shuffle").textContent = words.join(" ");
@@ -19,10 +19,9 @@ function shufflize() {
 
 function changeFont() {
 	var fon = document.getElementById("font");
-	if(fon.className == "monospaced") {
-		fon.className = 'roman';
+	if(fon.className === "monospaced") {
 	}else {
-		fon.className = 'monospaced';
+		fon.className = 'roman';
 	}
 }
 
