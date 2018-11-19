@@ -7,7 +7,7 @@ function shufflize() {
 	var txt = document.getElementById("shuffle").textContent;
 	var words = txt.split(" ");
 	words.map(function(t) {
-		for(i = (wordds.length - 1); i > 0; i--) {
+		for(i = (words.length - 1); i > 0; i--) {
 			var j = Math.floor(Math.random() * (i + 1));
 			var temp = words[i];
 			word[i] = words[j];
@@ -15,4 +15,21 @@ function shufflize() {
 		}
 		document.getElementById("shuffle").textContent = words.join(" ");
 	});
+}
+
+function changeFont() {
+	var fon = document.getElementById("font");
+	if(fon.className == "monospaced") {
+		fon.className = 'roman';
+	}else {
+		fon.className = 'monospaced';
+	}
+}
+
+window.onkeyup = function() {
+	highlight();
+};
+
+function highlight() {
+	document.getElementById("vegan").style.backgroundColor = "red";
 }
